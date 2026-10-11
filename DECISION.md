@@ -3,3 +3,7 @@ I want to build an HTML, CSS, JS landing page for my resume analyzer/Parser, whe
 I want to convert this entire project into a React project
 
 Use this skill https://www.skills.sh/anthropics/skills/frontend-design to make the website look professional
+
+I want you to move this react project into frontend folder and build a backend folder that contains the express server to handle the request, lets connect to mongoDB
+ 
+The application should take resume PDF and a Job Description for comparison, AI will be added later.
