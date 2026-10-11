@@ -1,128 +1,22 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Resume Analyzer — Score your resume in seconds</title>
-  <meta name="description" content="Upload a PDF resume and instantly see your score, the skills present in your resume, and the skills it's missing." />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#">AI<span>Resume</span>Analyzer</a>
-      <nav class="nav-links">
-        <a href="#analyze">Analyze</a>
-        <a href="#how-it-works">How it works</a>
-      </nav>
-      <a href="#analyze" class="btn btn-small">Upload resume</a>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container">
-        <p class="eyebrow">Free · No sign-up · Runs in your browser</p>
-        <h1>Know exactly what your resume is <em>missing</em></h1>
-        <p class="sub">
-          Upload a PDF and get an instant score, the skills recruiters can find in your
-          resume, and the ones it's missing.
-        </p>
-
-        <!-- Upload -->
-        <div id="analyze" class="upload-card">
-          <div id="dropzone" class="dropzone" tabindex="0" role="button" aria-label="Upload a PDF resume">
-            <div class="dropzone-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 16V4m0 0L8 8m4-4 4 4" />
-                <path d="M20 16v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2" />
-              </svg>
-            </div>
-            <p class="dropzone-title">Drag &amp; drop your resume here</p>
-            <p class="dropzone-hint">PDF only · or <span class="browse">browse your files</span></p>
-            <input id="file-input" type="file" accept="application/pdf,.pdf" hidden />
-          </div>
-
-          <p id="upload-error" class="upload-error" hidden></p>
-
-          <!-- Fake analysis progress -->
-          <div id="progress" class="progress" hidden>
-            <p id="progress-step" class="progress-step" aria-live="polite">Reading PDF…</p>
-            <div class="progress-track">
-              <div id="progress-bar" class="progress-bar"></div>
-            </div>
-          </div>
-
-          <!-- Mock results -->
-          <section id="results" class="results" hidden aria-label="Analysis results">
-            <div class="results-head">
-              <h2>Analysis complete</h2>
-              <p id="results-file" class="results-file"></p>
-            </div>
-
-            <div class="results-grid">
-              <div class="score-card">
-                <h3>Resume score</h3>
-                <div class="score-ring">
-                  <svg viewBox="0 0 120 120" role="img" aria-labelledby="score-value">
-                    <circle class="ring-bg" cx="60" cy="60" r="52" />
-                    <circle id="ring-fg" class="ring-fg" cx="60" cy="60" r="52" />
-                  </svg>
-                  <div class="score-text">
-                    <span id="score-value">0</span>
-                    <small>/ 100</small>
-                  </div>
-                </div>
-              </div>
-
-              <div class="skills-card">
-                <div class="skills-block">
-                  <h3>Skills present</h3>
-                  <ul id="skills-present" class="chips chips-present"></ul>
-                </div>
-                <div class="skills-block">
-                  <h3>Skills missing</h3>
-                  <ul id="skills-missing" class="chips chips-missing"></ul>
-                </div>
-              </div>
-            </div>
-
-            <button id="reset-btn" class="btn">Analyze another resume</button>
-          </section>
-        </div>
-      </div>
-    </section>
-
-    <section id="how-it-works" class="how">
-      <div class="container">
-        <h2>How it works</h2>
-        <div class="steps">
-          <div class="step">
-            <span class="step-num">1</span>
-            <h3>Upload your PDF</h3>
-            <p>Drop in the resume you'd send to a recruiter. Nothing is uploaded to a server.</p>
-          </div>
-          <div class="step">
-            <span class="step-num">2</span>
-            <h3>We scan for skills</h3>
-            <p>Your resume is parsed and matched against a library of common technical skills.</p>
-          </div>
-          <div class="step">
-            <span class="step-num">3</span>
-            <h3>Get your score</h3>
-            <p>See your score out of 100, the skills found, and the gaps worth filling.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <p>AI Resume Analyzer — a mock design. Results are simulated for demonstration.</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Analyzer — score your resume's skills</title>
+    <meta
+      name="description"
+      content="Drop in a PDF resume and get a score out of 100, the skills it shows, and the ones it's missing. Runs entirely in your browser."
+    />
+    <meta name="theme-color" content="#f7f7f4" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
